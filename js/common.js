@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+	$(document).on('touchmove',function(e) {
+		e.preventDefault();
+	});
 	var ww = $(window).width();
 	var wh = $(window).height();
 
@@ -95,8 +99,6 @@ $(document).ready(function(){
 	/*set content size*/
 	function setContentSize() {
 		$(".homepage a").css({width: (ww-72-14)/2});
-        
-        
     };
     setContentSize();
 
@@ -107,16 +109,16 @@ $(document).ready(function(){
 
 
 	function changeImageLondon() {
-			setTimeout(function(){
-				currentIndex++;
-				imgLondon.src = imgLondon1_5[currentIndex];
-				var ctx = canvasLondon.getContext('2d');
-				ctx.drawImage(imgLondon, 0, 0 , imgWidth, imgHeight);
-				if (currentIndex < 12) {
-					changeImageLondon();
-				}
-			},84);
-		};
+		setTimeout(function(){
+			currentIndex++;
+			imgLondon.src = imgLondon1_5[currentIndex];
+			var ctx = canvasLondon.getContext('2d');
+			ctx.drawImage(imgLondon, 0, 0 , imgWidth, imgHeight);
+			if (currentIndex < 12) {
+				changeImageLondon();
+			}
+		},84);
+	};
 
 	$(".london .answer button").click(function(){
 		changeImageLondon();
@@ -124,16 +126,16 @@ $(document).ready(function(){
 	});
 
 	function changeImageMilan() {
-			setTimeout(function(){
-				currentIndex++;
-				imgMilan.src = imgMilan1_5[currentIndex];
-				var ctx2 = canvasMilan.getContext('2d');
-				ctx2.drawImage(imgMilan, 0, 0 , imgWidth, imgHeight);
-				if (currentIndex < 12) {
-					changeImageMilan();
-				}
-			},84);
-		};
+		setTimeout(function(){
+			currentIndex++;
+			imgMilan.src = imgMilan1_5[currentIndex];
+			var ctx2 = canvasMilan.getContext('2d');
+			ctx2.drawImage(imgMilan, 0, 0 , imgWidth, imgHeight);
+			if (currentIndex < 12) {
+				changeImageMilan();
+			}
+		},84);
+	};
 
 	$(".milan .answer button").click(function(){
 		var currentIndex = 0;
